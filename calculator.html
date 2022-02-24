@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Awesome Calculator</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+  <div class="container">
+    <table>
+      <tr>
+        <td colspan="5">
+          <div id="screen">
+            <span id="screen_top">M=0</span>
+            <div id="screen_bottom">
+              <span id="operand1">0</span>
+              <span id="operator"></span>
+              <span id="operand2"></span>
+            </div>
+            <!-- <span id="screen_bottom">0</span> -->
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="button" class="btn btn-warning">MC</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-warning">MR</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-warning">M-</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-warning">M+</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-light"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="button" class="btn btn-light">7</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-light">8</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-light">9</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-secondary">÷</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-light">+/-</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="button" class="btn btn-light">4</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-light">5</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-light">6</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-secondary">x</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-secondary">-</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="button" class="btn btn-light">1</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-light">2</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-light">3</button>
+        </td>
+        <td rowspan="2">
+          <button type="button" class="btn btn-secondary long-btn">+</button>
+        </td>
+        <td rowspan="2">
+          <button type="button" class="btn btn-primary long-btn">=</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button type="button" class="btn btn-danger">C</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-light">0</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-light">.</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="alert alert-danger" id="message_panel" role="alert">
+    something wrong here
+  </div>
+</body>
+</html>

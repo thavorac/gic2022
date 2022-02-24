@@ -1,0 +1,52 @@
+.container {
+  margin-top: 10em;
+  width: 300px;
+  border: 1px solid black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+table {
+  border-spacing: 7px;
+  border-collapse: separate;
+}
+#screen {
+  border: 1px solid black;
+  padding: 7px;
+  width: 100%;
+  height: 4em;
+}
+#screen_top {
+  display: block;
+  font-size: 0.8rem;
+}
+#screen_bottom {
+  font-size: 1.8rem;
+  display: block;
+  text-align: right;
+}
+#operand2 {
+  background-color: skyblue;
+}
+#operator {
+  background-color: rosybrown;
+}
+.button-row {
+  display: flex;
+  justify-content: space-between;
+}
+button {
+  width: 45px;
+}
+.long-btn {
+  display: inline-block;
+  height: 80px;
+}
+
+/* Message panel */
+#message_panel {
+  width: 300px;
+  margin-top: 1em;
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+}
