@@ -7,7 +7,9 @@
             <div id="screen">
               <span id="screen_top">M=0</span>
               <div id="screen_bottom">
-                <span id="operand1">0</span>
+                <!-- v-text is a directive that is used to replace the content of HTML tag with private data -->
+                <!-- It will update the content automatically when data is changed. It is called data reactive -->
+                <span v-text="inputNumber" id="operand1">0</span>
                 <span id="operator"></span>
                 <span id="operand2"></span>
               </div>
@@ -70,7 +72,13 @@
         </tr>
         <tr>
           <td>
-            <button type="button" class="btn btn-light">1</button>
+            <button
+              v-on:click="showNumber(1)"
+              type="button"
+              class="btn btn-light"
+            >
+              1
+            </button>
           </td>
           <td>
             <button type="button" class="btn btn-light">2</button>
@@ -108,6 +116,19 @@
 export default {
   name: 'App',
   components: {},
+  data() {
+    return {
+      // This is the private data section which can be used inside this component
+      inputNumber: 0,
+    };
+  },
+  methods: {
+    showNumber(number) {
+      // Assign number when user click to the inputNumber data
+      // To access private data from methods, use (this.)
+      this.inputNumber = number;
+    },
+  },
 };
 </script>
 
