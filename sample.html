@@ -16,33 +16,66 @@
         borderColor: "black",
         width: 50,
         height: 20,
+        draw: (x, y) => {
+          // This is to choose background color and border color
+          ctx.fillStyle = greenBrick.backgroundColor;
+          ctx.strokeStyle = greenBrick.borderColor;
+          // This is where you draw your shape
+          ctx.fillRect(x, y, greenBrick.width, greenBrick.height);
+          ctx.strokeRect(x, y, greenBrick.width, greenBrick.height);
+        },
       };
       const yelloBrick = {
         backgroundColor: "#FF9900",
         borderColor: "blue",
         width: 50,
         height: 50,
+        draw: (x, y) => {
+          ctx.fillStyle = yelloBrick.backgroundColor;
+          ctx.strokeStyle = yelloBrick.borderColor;
+          ctx.fillRect(x, y, yelloBrick.width, yelloBrick.height);
+          ctx.strokeRect(x, y, yelloBrick.width, yelloBrick.height);
+        },
       };
       const redBrick = {
         backgroundColor: "#990000",
-        borderColor: "purple",
+        borderColor: "#9900FF",
         width: 20,
         height: 50,
+        draw: (x, y) => {
+          ctx.fillStyle = redBrick.backgroundColor;
+          ctx.strokeStyle = redBrick.borderColor;
+          ctx.fillRect(x, y, redBrick.width, redBrick.height);
+          ctx.strokeRect(x, y, redBrick.width, redBrick.height);
+        },
       };
 
-      // This is to choose background color and border color
-      ctx.fillStyle = greenBrick.backgroundColor;
-      // This is where you draw your shape
-      ctx.fillRect(50, 50, greenBrick.width, greenBrick.height);
+      // So here are my functions
+      function createWall(width, height, brick) {
+        // write your logic to create a wall
+        // for (let currentXPosition=0; i<=width; currentXPosition=brick.width)
+        let currentXPosition = 0;
+        let currentYPosition = 0;
+        let index = 1;
+        let indexY = 1;
+        while (currentXPosition < width) {
+          while (currentYPosition < height) {
+            const x = currentXPosition;
+            const y = currentYPosition;
+            brick.draw(x, y);
+            currentYPosition = brick.height * indexY;
+            indexY++;
+          }
 
-      ctx.fillStyle = yelloBrick.backgroundColor;
-      ctx.fillRect(200, 50, yelloBrick.width, yelloBrick.height);
+          currentXPosition = brick.width * index;
+          index++;
+        }
+      }
 
-      ctx.fillStyle = redBrick.backgroundColor;
-      ctx.fillRect(350, 50, redBrick.width, redBrick.height);
-
-      // ctx.strokeStyle = "red";
-      // ctx.strokeRect(50, 50, 100, 50);
+      createWall(300, 200, yelloBrick);
+      // greenBrick.draw();
+      // yelloBrick.draw();
+      // redBrick.draw();
     </script>
   </body>
 </html>
