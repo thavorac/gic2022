@@ -11,20 +11,35 @@
       let ctx = canvas.getContext("2d");
 
       // Question 1: Create 3 variables which represent green, yello, red brick
-      const greenBrick = "#009E0F";
-      const yelloBrick = "#FF9900";
-      const redBrick = "#990000";
+      const greenBrick = {
+        backgroundColor: "#009E0F",
+        borderColor: "black",
+        width: 50,
+        height: 20,
+      };
+      const yelloBrick = {
+        backgroundColor: "#FF9900",
+        borderColor: "blue",
+        width: 50,
+        height: 50,
+      };
+      const redBrick = {
+        backgroundColor: "#990000",
+        borderColor: "purple",
+        width: 20,
+        height: 50,
+      };
 
       // This is to choose background color and border color
-      ctx.fillStyle = greenBrick;
+      ctx.fillStyle = greenBrick.backgroundColor;
       // This is where you draw your shape
-      ctx.fillRect(50, 50, 100, 50);
+      ctx.fillRect(50, 50, greenBrick.width, greenBrick.height);
 
-      ctx.fillStyle = yelloBrick;
-      ctx.fillRect(200, 50, 100, 50);
+      ctx.fillStyle = yelloBrick.backgroundColor;
+      ctx.fillRect(200, 50, yelloBrick.width, yelloBrick.height);
 
-      ctx.fillStyle = redBrick;
-      ctx.fillRect(350, 50, 100, 50);
+      ctx.fillStyle = redBrick.backgroundColor;
+      ctx.fillRect(350, 50, redBrick.width, redBrick.height);
 
       // ctx.strokeStyle = "red";
       // ctx.strokeRect(50, 50, 100, 50);
