@@ -1,0 +1,33 @@
+<html>
+  <body>
+    <title>Sample Javascript</title>
+    <style></style>
+  </body>
+  <body>
+    <canvas width="500px" height="300px" id="canvas-container"></canvas>
+    <script>
+      // Get the canvas object reference
+      const canvas = document.getElementById("canvas-container");
+      let ctx = canvas.getContext("2d");
+
+      // Question 1: Create 3 variables which represent green, yello, red brick
+      const greenBrick = "#009E0F";
+      const yelloBrick = "#FF9900";
+      const redBrick = "#990000";
+
+      // This is to choose background color and border color
+      ctx.fillStyle = greenBrick;
+      // This is where you draw your shape
+      ctx.fillRect(50, 50, 100, 50);
+
+      ctx.fillStyle = yelloBrick;
+      ctx.fillRect(200, 50, 100, 50);
+
+      ctx.fillStyle = redBrick;
+      ctx.fillRect(350, 50, 100, 50);
+
+      // ctx.strokeStyle = "red";
+      // ctx.strokeRect(50, 50, 100, 50);
+    </script>
+  </body>
+</html>
