@@ -62,14 +62,36 @@
           index++;
         }
       }
+      function drawBird(x, y) {
+        const img = new Image();
+        img.onload = function() {
+          ctx.drawImage(img, x, y);
+        };
+        img.src = './images/bird1.png';
+      }
+      function drawWalls() {
+        createWall(0,0,100, 200, yelloBrick);
+        createWall(200, 150, 50, 100, greenBrick);
+        createWall(400, 200, 50, 200, redBrick);
+        createWall(60,400,100, 200, yelloBrick);
+        createWall(500, 20, 50, 100, greenBrick);
+        createWall(600, 100, 50, 200, redBrick);
+        createWall(700,400,300, 50, yelloBrick);
+      }
 
-      createWall(0,0,100, 200, yelloBrick);
-      createWall(200, 150, 50, 100, greenBrick);
-      createWall(400, 200, 50, 200, redBrick);
-      createWall(60,400,100, 200, yelloBrick);
-      createWall(500, 20, 50, 100, greenBrick);
-      createWall(600, 100, 50, 200, redBrick);
-      createWall(700,400,300, 50, yelloBrick);
+      const speed = 100;
+      let birdX = 0;
+
+      function animate() {
+        ctx.clearRect(0, 0, 1000, 600);
+        birdX = birdX + speed;
+        
+        drawWalls();
+        drawBird(birdX, 100);
+        if (birdX < 1000) requestAnimationFrame(animate);
+      }
+
+      animate();
     </script>
   </body>
 </html>
