@@ -51,31 +51,29 @@
       };
 
       // So here are my functions
-      function createWall(width, height, brick) {
+      function createWall(wallX, wallY, width, height, brick) {
         // write your logic to create a wall
         // for (let currentXPosition=0; i<=width; currentXPosition=brick.width)
-        let currentXPosition = 0;
+        let currentXPosition = wallX;
         let index = 1;
 
-        while (currentXPosition < width) {
+        while (currentXPosition < (width+wallX)) {
           let indexY = 1;
-          let currentYPosition = 0;
-          while (currentYPosition < height) {
-            const x = currentXPosition;
-            const y = currentYPosition;
-            brick.draw(x, y);
-            currentYPosition = brick.height * indexY;
+          let currentYPosition = wallY;
+          while (currentYPosition < (height+wallY)) {
+            brick.draw(currentXPosition, currentYPosition);
+            currentYPosition = wallY + (brick.height * indexY);
             indexY++;
           }
 
-          currentXPosition = brick.width * index;
+          currentXPosition = wallX + (brick.width * index);
           index++;
         }
       }
 
-      createWall(300, 200, yelloBrick);
-      createWall(200, 100, greenBrick);
-      createWall(100, 100, redBrick);
+      createWall(0,0,300, 200, yelloBrick);
+      createWall(350, 0, 200, 100, greenBrick);
+      createWall(600, 0, 100, 100, redBrick);
       // greenBrick.draw();
       // yelloBrick.draw();
       // redBrick.draw();
