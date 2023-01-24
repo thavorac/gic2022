@@ -1,54 +1,45 @@
 <html>
   <body>
     <title>Sample Javascript</title>
-    <style></style>
+    <style>
+      #canvas-container {
+        border: 1px solid black;
+      }
+    </style>
   </body>
   <body>
-    <canvas width="1000px" height="1000px" id="canvas-container"></canvas>
+    <canvas width="1000px" height="600px" id="canvas-container"></canvas>
     <script>
       // Get the canvas object reference
       const canvas = document.getElementById("canvas-container");
       let ctx = canvas.getContext("2d");
 
-      // Question 1: Create 3 variables which represent green, yello, red brick
-      const greenBrick = {
-        backgroundColor: "#009E0F",
-        borderColor: "black",
-        width: 50,
-        height: 20,
-        draw: (x, y) => {
+      class Brick {
+        backgroundColor = null;
+        borderColor = "black";
+        width = 0;
+        height = 0;
+        constructor(width, height, backgroundColor, borderColor) {
+          this.width = width;
+          this.height = height;
+          this.backgroundColor = backgroundColor;
+          this.borderColor = borderColor;
+        }
+
+        draw(x, y) {
           // This is to choose background color and border color
-          ctx.fillStyle = greenBrick.backgroundColor;
-          ctx.strokeStyle = greenBrick.borderColor;
+          ctx.fillStyle = this.backgroundColor;
+          ctx.strokeStyle = this.borderColor;
           // This is where you draw your shape
-          ctx.fillRect(x, y, greenBrick.width, greenBrick.height);
-          ctx.strokeRect(x, y, greenBrick.width, greenBrick.height);
-        },
-      };
-      const yelloBrick = {
-        backgroundColor: "#FF9900",
-        borderColor: "blue",
-        width: 50,
-        height: 50,
-        draw: (x, y) => {
-          ctx.fillStyle = yelloBrick.backgroundColor;
-          ctx.strokeStyle = yelloBrick.borderColor;
-          ctx.fillRect(x, y, yelloBrick.width, yelloBrick.height);
-          ctx.strokeRect(x, y, yelloBrick.width, yelloBrick.height);
-        },
-      };
-      const redBrick = {
-        backgroundColor: "#990000",
-        borderColor: "#9900FF",
-        width: 20,
-        height: 50,
-        draw: (x, y) => {
-          ctx.fillStyle = redBrick.backgroundColor;
-          ctx.strokeStyle = redBrick.borderColor;
-          ctx.fillRect(x, y, redBrick.width, redBrick.height);
-          ctx.strokeRect(x, y, redBrick.width, redBrick.height);
-        },
-      };
+          ctx.fillRect(x, y, this.width, this.height);
+          ctx.strokeRect(x, y, this.width, this.height);
+        }
+      }
+      
+      // Question 1: Create 3 variables which represent green, yello, red brick
+      const greenBrick = new Brick(50, 20, "#009E0F", "black");
+      const yelloBrick = new Brick(50, 50, "#FF9900", "blue");
+      const redBrick = new Brick(20, 50, "#990000", "#9900FF");
 
       // So here are my functions
       function createWall(wallX, wallY, width, height, brick) {
@@ -71,12 +62,13 @@
         }
       }
 
-      createWall(0,0,300, 200, yelloBrick);
-      createWall(350, 0, 200, 100, greenBrick);
-      createWall(600, 0, 100, 100, redBrick);
-      // greenBrick.draw();
-      // yelloBrick.draw();
-      // redBrick.draw();
+      createWall(0,0,100, 200, yelloBrick);
+      createWall(200, 150, 50, 100, greenBrick);
+      createWall(400, 200, 50, 200, redBrick);
+      createWall(60,400,100, 200, yelloBrick);
+      createWall(500, 20, 50, 100, greenBrick);
+      createWall(600, 100, 50, 200, redBrick);
+      createWall(700,400,300, 50, yelloBrick);
     </script>
   </body>
 </html>
