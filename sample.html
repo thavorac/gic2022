@@ -4,7 +4,7 @@
     <style></style>
   </body>
   <body>
-    <canvas width="500px" height="300px" id="canvas-container"></canvas>
+    <canvas width="1000px" height="1000px" id="canvas-container"></canvas>
     <script>
       // Get the canvas object reference
       const canvas = document.getElementById("canvas-container");
@@ -55,10 +55,11 @@
         // write your logic to create a wall
         // for (let currentXPosition=0; i<=width; currentXPosition=brick.width)
         let currentXPosition = 0;
-        let currentYPosition = 0;
         let index = 1;
-        let indexY = 1;
+
         while (currentXPosition < width) {
+          let indexY = 1;
+          let currentYPosition = 0;
           while (currentYPosition < height) {
             const x = currentXPosition;
             const y = currentYPosition;
@@ -73,6 +74,8 @@
       }
 
       createWall(300, 200, yelloBrick);
+      createWall(200, 100, greenBrick);
+      createWall(100, 100, redBrick);
       // greenBrick.draw();
       // yelloBrick.draw();
       // redBrick.draw();
