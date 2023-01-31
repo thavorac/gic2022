@@ -55,18 +55,16 @@
         // write your logic to create a wall
         // for (let currentXPosition=0; i<=width; currentXPosition=brick.width)
         let currentXPosition = 0;
-        let currentYPosition = 0;
         let index = 1;
-        let indexY = 1;
         while (currentXPosition < width) {
+          let currentYPosition = 0;
+          let indexY = 1;
           while (currentYPosition < height) {
-            const x = currentXPosition;
-            const y = currentYPosition;
-            brick.draw(x, y);
+            brick.draw(currentXPosition, currentYPosition);
             currentYPosition = brick.height * indexY;
+            console.log("X-Y", `${currentXPosition}-${currentYPosition}`);
             indexY++;
           }
-
           currentXPosition = brick.width * index;
           index++;
         }
