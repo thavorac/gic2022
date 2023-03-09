@@ -1,30 +1,26 @@
 <template>
-  <div id="app">
-    <span>Component A</span>
+  <div id="component-b">
+    <span>Component B</span>
     <div style="margin-top: 20px">X: {{ x }}</div>
 
-    <ComponentB @increasedX="x = x + 1" :x="x"></ComponentB>
+    <ComponentC @increasedX="$emit('increasedX')" :x="x"></ComponentC>
   </div>
 </template>
 
 <script>
-import ComponentB from "./components/ComponentB.vue";
+import ComponentC from "./ComponentC.vue";
 export default {
-  name: "ComponentA",
+  name: "ComponentB",
+  props: ["x"],
   components: {
-    ComponentB,
-  },
-  data() {
-    return {
-      x: 4,
-    };
+    ComponentC,
   },
 };
 </script>
 <style>
-#app {
+#component-b {
   border: 1px solid black;
-  width: 500px;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   align-items: center;
