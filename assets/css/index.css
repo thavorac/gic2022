@@ -1,0 +1,39 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+#section-title {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+#title {
+  font-size: 20px;
+}
+#menu-list {
+  display: flex;
+  gap: 20px;
+}
+.menu-item.active {
+  color: blue;
+  text-decoration: underline;
+}
+#section-detail {
+  display: flex;
+  gap: 30px;
+}
+#short-description {
+  width: 40%;
+}
+#short-description img {
+  width: 100%;
+  border: 1px solid black;
+  /* padding: 20px; */
+}
+#direction {
+  flex: 1;
+}
