@@ -6,6 +6,6 @@
         <title>Laravel</title>
     </head>
     <body>
-       Author Page
+       Blog index Page
     </body>
 </html>

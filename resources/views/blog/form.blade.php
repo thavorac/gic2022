@@ -6,6 +6,6 @@
         <title>Laravel</title>
     </head>
     <body>
-       Blog Page
+       Blog form Page
     </body>
 </html>
