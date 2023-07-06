@@ -16,7 +16,7 @@
                 @csrf
                 <div class="form-group">
                     <label>Full Name:</label>
-                    <input class="form-control" type="text" name="fullname" required placeholder="Enter Your Full Name"/>
+                    <input class="form-control" type="text" name="name" required placeholder="Enter Your Full Name"/>
                     <span class="Error"></span>
                 </div>
                 <div class="form-group">

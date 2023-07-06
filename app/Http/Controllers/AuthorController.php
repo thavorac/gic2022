@@ -29,8 +29,10 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        // code to save to db
-        return "Author saved";
+        $newAuthor = Author::create([
+            'name' => $request->name
+        ]);
+        return redirect("/authors");
     }
 
     /**
