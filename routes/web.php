@@ -16,10 +16,7 @@ use App\Http\Controllers\AuthorController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/test', [TestController::class, "show"]);
 Route::get('/blogs', [BlogController::class, "index"]);
 Route::get('/authors', [AuthorController::class, "index"]);
+Route::get('/authors/form', [AuthorController::class, "create"]);
+Route::post('/authors/form', [AuthorController::class, "store"]);

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Author;
 
 class AuthorController extends Controller
 {
@@ -11,7 +12,8 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        return view('author.index');
+        $authors = Author::all();
+        return view('author.index', [ 'authors' => $authors ]);
     }
 
     /**
@@ -19,7 +21,7 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        //
+        return view('author.form');
     }
 
     /**
@@ -27,7 +29,8 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // code to save to db
+        return "Author saved";
     }
 
     /**
