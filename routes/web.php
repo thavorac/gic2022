@@ -5,6 +5,8 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AuthorController;
 
+use App\Http\Middleware\AuthGuard;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,13 @@ use App\Http\Controllers\AuthorController;
 */
 
 Route::get('/blogs', [BlogController::class, "index"]);
-Route::get('/authors', [AuthorController::class, "index"]);
-Route::get('/authors/form', [AuthorController::class, "create"]);
-Route::post('/authors/form', [AuthorController::class, "store"]);
+
+Route::get('/forbidden', function() {
+  return "Forbidden!! You are not allow to access this page";
+});
+
+Route::prefix('authors')->middleware([AuthGuard::class])->group(function() {
+  Route::get('/', [AuthorController::class, "index"]);
+  Route::get('/form', [AuthorController::class, "create"]);
+  Route::post('/form', [AuthorController::class, "store"]);
+});

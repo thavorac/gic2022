@@ -12,6 +12,8 @@ class AuthorController extends Controller
      */
     public function index()
     {
+        // check if user have valid role/permission
+        
         $authors = Author::all();
         return view('author.index', [ 'authors' => $authors ]);
     }
