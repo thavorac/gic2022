@@ -31,9 +31,14 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->hasFile('photo')) {
+            $path = $request->photo->store('photos', 'public');
+        }
         $newAuthor = Author::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'photo' => $path
         ]);
+        // return ["message" => "done"];
         return redirect("/authors");
     }
 
@@ -42,7 +47,7 @@ class AuthorController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return ["message" => "Success"];
     }
 
     /**

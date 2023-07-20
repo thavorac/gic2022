@@ -53,7 +53,10 @@
                 Author index Page
                 <ol>
                 @foreach ($authors as $author)
-                    <li>{{ $author["name"] }}</li>
+                    <li>
+                        <img width="30px" src="/storage/{{$author['photo']}}" />
+                        {{ $author["name"] }}
+                    </li>
                 @endforeach
                 </ol>
             </div>

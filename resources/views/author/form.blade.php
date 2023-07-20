@@ -12,7 +12,7 @@
             <h2>Create Author: </h2>
             <br/>
             <br/>
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label>Full Name:</label>
@@ -30,6 +30,10 @@
                     <label><input type="radio" name="gender" required value="Female" /> Female</label>
                     <label><input type="radio" name="gender" required value="Other" /> Other</label>
                     <span class="Error"></span>
+                </div>
+                <div class="form-group">
+                    <label>Photo:</label><br/>
+                    <input class="form-control" type="file" name="photo"/>
                 </div>
                 <div class="form-group">
                     <input class="btn btn-primary btn-block" type="submit" value="Submit"/>

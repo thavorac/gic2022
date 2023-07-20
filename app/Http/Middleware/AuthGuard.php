@@ -15,9 +15,9 @@ class AuthGuard
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->query('secret') !== 'hello') {
-            return redirect('forbidden');
-        }
+        // if ($request->header('secret') !== 'hello') {
+        //     return response(["message" => "Forbidden"]);
+        // }
         return $next($request);
     }
 }
